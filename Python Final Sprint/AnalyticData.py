@@ -9,8 +9,8 @@ def generateAnalyticsData():
         for line in empFile:
             employeeData = line.strip().split(',')
             employees.append({
-                'employeeID': employeeData[0],
-                'name': employeeData[1],
+                'driverNumber': employeeData[0],
+                'nameFirst': employeeData[1],
                 'carID': employeeData[2],
                 'balanceDue': float(employeeData[3])
             })
@@ -33,10 +33,10 @@ def generateAnalyticsData():
         for line in expFile:
             expenseData = line.strip().split(',')
             expenses.append({
-                'transactionID': expenseData[0],
-                'date': expenseData[1],
+                'invoiceNumber': expenseData[0],
+                'date': expenseData[3],
                 'description': expenseData[5],
-                'amount': float(expenseData[3])
+                'subTotal': float(expenseData[3])
             })
 
     print(expenses)
