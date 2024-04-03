@@ -1,9 +1,9 @@
-#Enter company expenses
+# Enter company expenses
 # by Brian Jackman
 # 2024 04 02
 
 
-#function for inputs and validations
+# function for inputs and validations
 def expenses_input():
     while True:
         allowed_char = set("1234567890")
@@ -52,7 +52,8 @@ def expenses_input():
     print()
 
     while True:
-        allowed_char = set("ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz-'.,")
+        allowed_char = set(
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz-'.,")
         ItemDesc = input("Enter the item description: ").title()
         if ItemDesc == "":
             print("Data Entry Error - Item description cannot be blank.")
@@ -114,15 +115,18 @@ def expenses_input():
     x.write("{}, ".format(ItemHST))
     x.write("{}, ".format(ItemTotal))
     x.close()
+
+
 print()
 print("Data Saved")
-#run function and ask if want to run it again
+# run function and ask if want to run it again
 expenses_input()
 while True:
     allowed_char = set("YNyn")
-    RunAgain = input("Would you like to enter another driver's information(Y/N)?: ").upper()
+    RunAgain = input(
+        "Would you like to enter another driver's information(Y/N)?: ").upper()
     print()
-    if RunAgain =="":
+    if RunAgain == "":
         print("Data Entry Error - Cannot be blank")
     elif set(RunAgain).issubset(allowed_char) == False:
         print("Data Entry Error - Must enter Y or N")
